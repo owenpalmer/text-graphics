@@ -35,7 +35,7 @@ impl<'a> Canvas<'a> {
     fn fillRect(&mut self, x: usize, y: usize, w: usize, h: usize, fill: &'a str) {
         for x_coor in x..x+w {
             for y_coor in y..y+h {
-                self.pixels[y_coor][x_coor] = fill;
+                self.point(x_coor, y_coor, fill);
             }
         }
     }
@@ -48,7 +48,9 @@ impl<'a> Canvas<'a> {
     }
 
     fn point(&mut self, x: usize, y: usize, draw: &'a str) {
-        self.pixels[y][x] = draw;
+        if (0..self.width).contains(&x) && (0..self.height).contains(&y){
+            self.pixels[y][x] = draw;
+        }
     }
 
 }
