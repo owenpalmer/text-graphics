@@ -3,5 +3,5 @@
 version = 3
 
 [[package]]
-name = "ascii_graph"
+name = "text-graphics"
 version = "0.1.0"
